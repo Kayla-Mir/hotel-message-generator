@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 // global data imports
 import guests from '../../GlobalData/Guests.json';
 import companies from '../../GlobalData/Companies.json';
@@ -8,7 +8,7 @@ import WelcomeMsg from '../WelcomeMsg/WelcomeMsg';
 import { Box, InputLabel, MenuItem, FormControl, Select, TextField, IconButton, Modal, Typography } from '@mui/material';
 // MUI icon import
 import InfoIcon from '@mui/icons-material/Info';
-// MUI styles
+// MUI style for the modal
 const style = {
   position: 'absolute',
   top: '50%',
@@ -27,10 +27,13 @@ const HotelMain = () => {
   const [currentCompany, setCurrentCompany] = useState('');
   const [editMode, setEditMode] = useState(false);
   const [customMessage, setCustomMessage] = useState('');
+  // Modal settings, handles the opening and closing of it as well as
+    // the piece of state tied to it
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // constants that are displayed in the modal
   const helpMessage = 'Ex: {{timeDay}} {{firstName}}, welcome to {{company}}!';
   const helpText = [
     { title: `{{timeDay}}`, description: `: Displays 'Good Morning', 'Good Evening', 'Good Night' depending on time of day.` },
