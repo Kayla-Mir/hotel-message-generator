@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "type": "Basic Welcome Message",
+    "message": "{{timeDay}} {{firstName}}, welcome to {{company}}! Your room number is #{{roomNumber}}. Please enjoy your stay!"
+  },
+  {
+    "id": 1,
+    "type": "Detailed Welcome Message",
+    "message": "{{timeDay}} {{firstName}}! Your room number is #{{roomNumber}}, check-in time is {{checkIn}} and your check-out time is {{checkOut}}. Please enjoy your stay at the {{company}} in {{city}}!"
+  },
+  {
+    "id": 2,
+    "type": "Check Out Message",
+    "message": "{{timeDay}} {{firstName}}, thanks for staying with us at {{company}} in {{city}}! Your check-out time is {{checkOut}}."
+  },
+  {
+    "id": 3,
+    "type": "Confirmation Message",
+    "message": "{{timeDay}} {{firstName}}, please confirm your upcoming stay at {{company}} on {{checkIn}}, room number #{{roomNumber}}."
+  }
+]
