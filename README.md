@@ -9,9 +9,9 @@ This application gives hotel staff a quick easy way to generate personalized or 
 ## Screen Shots
 ___
 
-![Picture of pre-filled message](./public/prefilled-msg.png)
+![Picture of pre-filled message](./public/images/prefilled-msg.png)
 
-![Picture of pre-filled message](./public/custom-msg.png)
+![Picture of pre-filled message](./public/images/custom-msg.png)
 
 ## Installation
 ___
