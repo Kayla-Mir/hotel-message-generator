@@ -1,7 +1,11 @@
 const Header = () => {
   return (
-    <div>
-      <h2>Please Select Your Options!</h2>
+    <div 
+      style={{
+        margin: '5vh'
+      }}
+    >
+      <h2>Welcome to the Hotel Message Generator!</h2>
     </div>
   )
 }

@@ -55,8 +55,6 @@ const WelcomeMsg = ({ guest, company, message, custom }) => {
     )
   }
 
-  console.log('custom', custom);
-
   return (
     <div>
       <Card sx={{ minHeight: 443, minWidth: 275, background: `url(blank-invitation.jpeg)` }}>
@@ -65,10 +63,12 @@ const WelcomeMsg = ({ guest, company, message, custom }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            margin: '21vh'
+            margin: '20vh 21vh 0vh 21vh'
           }}
         >
-          <Typography>
+          <Typography
+            variant= 'h6'
+          >
             {stringTemplateParser(
                 custom ? 
                   custom
