@@ -42,6 +42,8 @@ This app is built without a database, so all the guests, companies, and messages
 
 A majority of the logic happens in the WelcomeMsg file, here is where the rendering of the message chosen as well as the guest information and company information is handled. Whichever message, guest, and company you choose is passed to this component with props in the HotelMain file. In the WelcomeMsg component, rendering of the messages is handled with a replace function, it will go through the message string looking for something like {{firstName}}, and replace it with the value you assign when you call the function. So {{firstName}} will end up being the first name of the selected guest. 
 
+Throughout the project I made just to test my code and make sure it was working as I intended, the first issues I came across was how I wanted to handle custom messages that a user would input. Initially I tried to set up the JSON messages file to have a beginning of the message, middle, and end of message. But that severely limits the customization that a user has over their message. Then StackOverflow introduced me to the function I used, which is a mix of regex and .replace(). 
+
 ## Future Plans
 ___
 
