@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // global data imports
 import guests from '../../GlobalData/Guests.json';
 import companies from '../../GlobalData/Companies.json';
@@ -21,7 +21,7 @@ const style = {
   p: 4,
 };
 
-const HotelMsg = () => {
+const HotelMain = () => {
   const [currentMessage, setCurrentMessage] = useState('');
   const [currentGuest, setCurrentGuest] = useState('');
   const [currentCompany, setCurrentCompany] = useState('');
@@ -33,15 +33,15 @@ const HotelMsg = () => {
 
   const helpMessage = 'Ex: {{timeDay}} {{firstName}}, welcome to {{company}}!';
   const helpText = [
-    {title: `{{timeDay}}`,  description: `: Displays 'Good Morning', 'Good Evening', 'Good Night' depending on time of day.`},
-    {title: `{{firstName}}`, description: `: The first name of selected guest.`},
-    {title: `{{lastName}}`, description: `: The last name of selected guest.`},
-    {title: `{{roomNumber}}`, description: `: The room number of selected guest.`},
-    {title: `{{checkIn}}`, description: `: The check in time for selected guest.`},
-    {title: `{{checkOut}}`, description: `: The check out time for selected guest.`},
-    {title: `{{company}}`, description: `: The selected hotel.`},
-    {title: `{{city}}`, description: `: The city where selected hotel is located.`},
-    {title: `{{timezone}}`, description: `: The timezone of the selected hotel.`},
+    { title: `{{timeDay}}`, description: `: Displays 'Good Morning', 'Good Evening', 'Good Night' depending on time of day.` },
+    { title: `{{firstName}}`, description: `: The first name of selected guest.` },
+    { title: `{{lastName}}`, description: `: The last name of selected guest.` },
+    { title: `{{roomNumber}}`, description: `: The room number of selected guest.` },
+    { title: `{{checkIn}}`, description: `: The check in time for selected guest.` },
+    { title: `{{checkOut}}`, description: `: The check out time for selected guest.` },
+    { title: `{{company}}`, description: `: The selected hotel.` },
+    { title: `{{city}}`, description: `: The city where selected hotel is located.` },
+    { title: `{{timezone}}`, description: `: The timezone of the selected hotel.` },
   ]
 
   const handleGuestInput = (e) => {
@@ -88,11 +88,12 @@ const HotelMsg = () => {
             label="Message Type"
             onChange={handleMessageInput}
             sx={{
-              minWidth: 220
+              minWidth: 220,
+              backgroundColor: 'white'
             }}
           >
             {messages.map((item) => (
-              <MenuItem key={item.id} value={item}>{item.type}</MenuItem>
+              <MenuItem key={item?.id} value={item}>{item.type}</MenuItem>
             ))}
             <MenuItem value={'Custom Message'} onClick={() => handleEditMode()}>Custom Message</MenuItem>
           </Select>
@@ -105,7 +106,8 @@ const HotelMsg = () => {
             label="Guest"
             onChange={handleGuestInput}
             sx={{
-              minWidth: 120
+              minWidth: 120,
+              backgroundColor: 'white'
             }}
           >
             {guests.map((item) => (
@@ -121,7 +123,8 @@ const HotelMsg = () => {
             label="Company"
             onChange={handleCompanyInput}
             sx={{
-              minWidth: 120
+              minWidth: 120,
+              backgroundColor: 'white'
             }}
           >
             {companies.map((item) => (
@@ -144,7 +147,8 @@ const HotelMsg = () => {
             onChange={handleCustomMessage}
             sx={{
               minWidth: '40vw',
-              marginTop: '2vh'
+              marginTop: '2vh',
+              backgroundColor: 'white'
             }}
           />
           <IconButton
@@ -165,13 +169,11 @@ const HotelMsg = () => {
               <Typography id="modal-example" variant="h6">
                 {helpMessage}
               </Typography>
-              <Typography id="modal-help-text" sx={{ mt: 2 }}>
-                <ul>
-                  {helpText.map((item) => (
-                    <li><b style={{color: 'blue'}}>{item.title}</b>{item.description}</li>
-                  ))}
-                </ul>
-              </Typography>
+              <ul>
+                {helpText.map((item, i) => (
+                  <li key={i}><b style={{ color: 'blue' }}>{item.title}</b>{item.description}</li>
+                ))}
+              </ul>
             </Box>
           </Modal>
         </div>
@@ -182,4 +184,4 @@ const HotelMsg = () => {
 
 }
 
-export default HotelMsg;
+export default HotelMain;

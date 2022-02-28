@@ -1,6 +1,6 @@
 import './App.css';
 import Header from '../Header/Header';
-import HotelMsg from '../HotelMsg/HotelMsg';
+import HotelMsg from '../HotelMain/HotelMain';
 
 function App() {
   return (

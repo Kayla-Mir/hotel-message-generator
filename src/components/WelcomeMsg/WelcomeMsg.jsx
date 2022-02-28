@@ -34,11 +34,11 @@ const WelcomeMsg = ({ guest, company, message, custom }) => {
       return 'Please enter your message below.'
     }
     const templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
-    let text = expression.replace(templateMatcher, (substring, value, index) => {
+    let text = expression.replace(templateMatcher, (substring, value) => {
       value = valueObj[value];
       return value;
     });
-    return text
+    return text;
   }
 
   const getCheckInTime = () => {
@@ -57,7 +57,13 @@ const WelcomeMsg = ({ guest, company, message, custom }) => {
 
   return (
     <div>
-      <Card sx={{ minHeight: 443, minWidth: 275, background: `url(blank-invitation.jpeg)` }}>
+      <Card 
+        sx={{ 
+          minHeight: 443, 
+          minWidth: 275, 
+          background: `url(/images/blank-invitation.jpeg)` 
+        }}
+      >
         <CardContent
           sx={{
             display: 'flex',
@@ -78,7 +84,7 @@ const WelcomeMsg = ({ guest, company, message, custom }) => {
                 {
                   timeDay: getTimeOfDayMsg(),
                   firstName: guest === '' ? '_' : guest.firstName,
-                  lastName: guest === '' ? '-' : guest.lastName,
+                  lastName: guest === '' ? '_' : guest.lastName,
                   company: company === '' ? '_' : company.company,
                   roomNumber: guest === '' ? '_' : guest.reservation.roomNumber,
                   checkIn: guest === '' ? '_' : getCheckInTime(),
